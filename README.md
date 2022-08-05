@@ -30,7 +30,7 @@ $ sudo sysctl -p /etc/sysctl.conf
 ```
 ## 3. login use authkey
 tailscale admin page: https://login.tailscale.com/admin
-
+![Auth key](./img/authkey.png "Authkeys")
 Settings > Personal Settings > Keys > Auth keys > Generate auth key... > copy
 ```
 $ docker exec tailscale tailscale up --authkey=tskey-kFYpHy2CNTRL~~~~~~~
@@ -40,5 +40,5 @@ $ docker exec tailscale tailscale up --authkey=tskey-kFYpHy2CNTRL~~~~~~~
 $ docker exec tailscale tailscale up --advertise-exit-node
 ```
 tailscale admin page : https://login.tailscale.com/admin
-
+![Exit node](./img/exitnode.png "Exit node")
 ... click > Edit route settings... > Exit node > enable : Use as exit node

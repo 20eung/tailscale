@@ -29,7 +29,9 @@ $ echo 'net.ipv6.conf.all.forwarding = 1' | sudo tee -a /etc/sysctl.conf
 $ sudo sysctl -p /etc/sysctl.conf
 ```
 ## 3. login use authkey
-tailscale admin page > Settings > Personal Settings > Keys > Auth keys > Generate auth key... > copy
+tailscale admin page: https://login.tailscale.com/admin
+
+Settings > Personal Settings > Keys > Auth keys > Generate auth key... > copy
 ```
 $ docker exec tailscale tailscale up --authkey=tskey-kFYpHy2CNTRL~~~~~~~
 ```
@@ -37,4 +39,6 @@ $ docker exec tailscale tailscale up --authkey=tskey-kFYpHy2CNTRL~~~~~~~
 ```
 $ docker exec tailscale tailscale up --advertise-exit-node
 ```
-tailscale admin page > ... click > Edit route settings... > Exit node > enable : Use as exit node
+tailscale admin page : https://login.tailscale.com/admin
+
+... click > Edit route settings... > Exit node > enable : Use as exit node

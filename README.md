@@ -44,3 +44,9 @@ tailscale admin page : https://login.tailscale.com/admin
 ![Exit node](./img/exitnode.PNG "Exit node")
 
 ... click > Edit route settings... > Exit node > enable : Use as exit node
+
+## 5. connect docker container
+
+```
+docker exec -it tailscale /bin/sh
+```

@@ -38,7 +38,7 @@ $ docker exec tailscale tailscale up --authkey=tskey-kFYpHy2CNTRL~~~~~~~
 ```
 ## 4. enable exit node
 ```
-$ docker exec tailscale tailscale up --advertise-exit-node
+$ docker exec tailscale tailscale up --advertise-exit-node --accept-routes
 ```
 tailscale admin page : https://login.tailscale.com/admin
 ![Exit node](./img/exitnode.PNG "Exit node")

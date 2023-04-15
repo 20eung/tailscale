@@ -6,7 +6,7 @@ services:
   tailscale:
       privileged: true
       hostname: tailscale                                    # This will become the tailscale device name
-      network_mode: "host"
+#     network_mode: "host"
       container_name: tailscale
       image: tailscale/tailscale:latest
       volumes:
@@ -37,6 +37,9 @@ Settings > Personal Settings > Keys > Auth keys > Generate auth key... > copy
 $ docker exec tailscale tailscale up --authkey=tskey-kFYpHy2CNTRL~~~~~~~
 ```
 ## 4. enable exit node
+
+network_mode = host 로 설정하면 exit node 가 정상적으로 동작하지 않는다.
+
 ```
 $ docker exec tailscale tailscale up --advertise-exit-node --accept-routes
 ```

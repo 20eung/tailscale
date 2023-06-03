@@ -57,7 +57,7 @@ $ docker exec tailscale tailscale up --authkey=tskey-kFYpHy2CNTRL~~~~~~~
 network_mode = host 로 설정하면 exit node 가 정상적으로 동작하지 않는다.
 
 ```
-$ docker exec tailscale tailscale up --advertise-exit-node --accept-routes
+$ docker exec tailscale tailscale up --ssh --accept-routes --advertise-exit-node
 ```
 
 tailscale admin page : https://login.tailscale.com/admin

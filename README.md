@@ -72,11 +72,11 @@ tailscale admin page : https://login.tailscale.com/admin
 docker exec -it tailscale /bin/sh
 ```
 
-## 5. Tailscale SSH 사용 팁
+## 6. Tailscale SSH 사용 팁
 
 docker-compose.yml 파일이 있는 폴더에서 다음과 같이 작성한다.
 
-### data 디렉토리를 생성한다. tailscale 도커 이미지에서 /root 에 마운트된다
+- data 디렉토리를 생성한다. tailscale 도커 이미지에서 /root 에 마운트된다
 
 ```
 $ mkdir data

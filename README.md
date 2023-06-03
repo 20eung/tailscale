@@ -18,7 +18,6 @@ services:
     volumes:
       - /dev/net/tun:/dev/net/tun
       - /opt/appdata/tailscale/var_lib:/var/lib
-      - /etc/timezone:/etc/timezone
       - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
     cap_add:
       - net_admin

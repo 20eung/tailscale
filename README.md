@@ -33,6 +33,7 @@ EOF
 
 ```
 docker-compose up -d
+
 ```
 
 ## 2. enable ip forwarding
@@ -41,6 +42,7 @@ docker-compose up -d
 echo 'net.ipv4.ip_forward = 1' | sudo tee -a /etc/sysctl.conf
 echo 'net.ipv6.conf.all.forwarding = 1' | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p /etc/sysctl.conf
+
 ```
 
 ## 3. login use authkey
@@ -61,6 +63,7 @@ network_mode = host 로 설정하면 exit node 가 정상적으로 동작하지 
 
 ```
 docker exec tailscale tailscale up --ssh --accept-routes --advertise-exit-node
+
 ```
 
 tailscale admin page : https://login.tailscale.com/admin
@@ -73,6 +76,7 @@ tailscale admin page : https://login.tailscale.com/admin
 
 ```
 docker exec -it tailscale /bin/sh
+
 ```
 
 ## 6. Tailscale SSH 사용 팁
@@ -83,6 +87,7 @@ docker-compose.yml 파일이 있는 폴더에서 다음과 같이 작성한다.
 
 ```
 mkdir data
+
 ```
 
 - .aliases 파일을 만든다. 자기가 자주 사용하는 alias를 적어두면 된다.
@@ -134,4 +139,5 @@ EOF
 mkdir data/.ssh
 cp ~/.ssh/id_rsa data/.ssh/id_rsa
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+
 ```

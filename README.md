@@ -98,11 +98,13 @@ mkdir data
 
 ```
 cat << EOF > data/.aliases
-alias l.='ls -d .* --color=auto'
+alias ls='ls --color=auto -CF'
 alias la='ls -A'
 alias ll='ls -alF'
-alias ls='ls --color=auto -CF'
 alias lt='ls -ltr'
+alias grepi="egrep -v '^[[:space:]]*([#\;].*)?$'"
+alias mtr="mtr -i 1 -G 1 -Z 1 -b -w"
+alias myip='curl http://checkip.amazonaws.com'
 alias so='source ~/.aliases'
 GW=`route | grep default | awk '{print $2}'`
 alias hostos='ssh ubuntu@$GW'

@@ -26,6 +26,7 @@ services:
       - sys_module
     command: tailscaled
 EOF
+
 ```
 
 ## 1. tailscale docker-compose up
@@ -101,6 +102,7 @@ alias so='source ~/.aliases'
 GW=`route | grep default | awk '{print $2}'`
 alias hostos='ssh ubuntu@$GW'
 EOF
+
 ```
 
 - .profile 파일을 만든다. 로그인 시 자동 실행된다.
@@ -120,6 +122,7 @@ echo '------------------'
 echo \$GW=$GW
 alias hostos
 EOF
+
 ```
 
 - 호스트 OS에 SSH로 접속하기 위한 RSA 키를 호스트 OS에서 복사한다.

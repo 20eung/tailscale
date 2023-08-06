@@ -54,7 +54,7 @@ tailscale admin page: https://login.tailscale.com/admin
 Settings > Personal Settings > Keys > Auth keys > Generate auth key... > copy
 
 ```
-docker exec tailscale tailscale up --authkey=tskey-kFYpHy2CNTRL~~~~~~~
+docker exec -it tailscale tailscale up --authkey=tskey-kFYpHy2CNTRL~~~~~~~
 ```
 
 ## 4. enable exit node & Tailscale SSH
@@ -62,7 +62,7 @@ docker exec tailscale tailscale up --authkey=tskey-kFYpHy2CNTRL~~~~~~~
 network_mode = host 로 설정하면 exit node 가 정상적으로 동작하지 않는다.
 
 ```
-docker exec tailscale tailscale up --ssh --accept-routes --advertise-exit-node
+docker exec -it tailscale tailscale up --ssh --accept-routes --advertise-exit-node
 
 ```
 

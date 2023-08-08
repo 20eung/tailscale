@@ -106,7 +106,7 @@ alias grepi="egrep -v '^[[:space:]]*([#\;].*)?$'"
 alias mtr="mtr -i 1 -G 1 -Z 1 -b -w"
 alias myip='curl http://checkip.amazonaws.com'
 alias so='source ~/.aliases'
-GW=`route | grep default | awk '{print $2}'`
+GW=`route -n | grep ^0.0.0.0 | awk '{print $2}'`
 alias hostos='ssh ubuntu@$GW'
 EOF
 

@@ -139,7 +139,7 @@ EOF
 
 ```
 mkdir data/.ssh
-cp ~/.ssh/id_rsa data/.ssh/id_rsa
-cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+cp ~ubuntu/.ssh/id_rsa data/.ssh/id_rsa
+cat ~ubuntu/.ssh/id_rsa.pub >> ~ubuntu/.ssh/authorized_keys
 
 ```

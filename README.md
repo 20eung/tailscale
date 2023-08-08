@@ -121,7 +121,7 @@ $ vi data/.profile
 ```
 cat << EOF > data/.profile
 source ~/.aliases
-apk add -q openssh-client-default
+apk add -q openssh-client-default curl
 echo '------------------'
 echo 'To connect HostOS,'
 echo 'Check alias hostos'

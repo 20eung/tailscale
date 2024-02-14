@@ -13,7 +13,6 @@ services:
     hostname: tailscale
     restart: unless-stopped
     privileged: true
-#   network_mode: "host"
     environment:
       - TZ=Asia/Seoul
     volumes:
@@ -25,6 +24,11 @@ services:
       - net_admin
       - sys_module
     command: tailscaled
+
+networks:
+  default:
+    name: my_bridge
+    driver: bridge
 EOF
 
 ```

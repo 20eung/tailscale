@@ -143,6 +143,7 @@ EOF
 
 ```
 mkdir data/.ssh
+chmod 700 data/.ssh
 cp ~ubuntu/.ssh/id_rsa data/.ssh/id_rsa
 cat ~ubuntu/.ssh/id_rsa.pub >> ~ubuntu/.ssh/authorized_keys
 

@@ -1,7 +1,7 @@
-﻿# tailscale
+﻿# 도커 컨테이너로 tailscale 구동하기
  
 
-> docker-compose.yml
+## 1. docker-compose.yml
 
 ```
 cat << EOF > docker-compose.yml
@@ -33,14 +33,14 @@ EOF
 
 ```
 
-## 1. tailscale docker-compose up
+## 2. tailscale docker-compose up
 
 ```
 docker-compose up -d
 
 ```
 
-## 2. enable ip forwarding
+## 3. enable ip forwarding
 
 ```
 echo 'net.ipv4.ip_forward = 1' | sudo tee -a /etc/sysctl.conf
@@ -49,7 +49,7 @@ sudo sysctl -p /etc/sysctl.conf
 
 ```
 
-## 3. login use authkey
+## 4. login use authkey
 
 tailscale admin page: https://login.tailscale.com/admin
 
@@ -61,7 +61,7 @@ Settings > Personal Settings > Keys > Auth keys > Generate auth key... > copy
 docker exec -it tailscale tailscale up --authkey=tskey-kFYpHy2CNTRL~~~~~~~
 ```
 
-## 4. enable exit node & Tailscale SSH
+## 5. enable exit node & Tailscale SSH
 
 network_mode = host 로 설정하면 exit node 가 정상적으로 동작하지 않는다.
 
@@ -76,14 +76,14 @@ tailscale admin page : https://login.tailscale.com/admin
 
 ... click > Edit route settings... > Exit node > enable : Use as exit node
 
-## 5. connect docker container
+## 6. connect docker container
 
 ```
 docker exec -it tailscale /bin/sh
 
 ```
 
-## 6. Tailscale SSH 사용 팁
+## 7. Tailscale SSH 사용 팁
 
 docker-compose.yml 파일이 있는 폴더에서 다음과 같이 작성한다.
 
@@ -146,5 +146,23 @@ mkdir data/.ssh
 chmod 700 data/.ssh
 cp ~ubuntu/.ssh/id_rsa data/.ssh/id_rsa
 cat ~ubuntu/.ssh/id_rsa.pub >> ~ubuntu/.ssh/authorized_keys
+```
 
+## 8. Access List 설정
+
+```json
+{
+	"acls": [
+		{
+			"action": "accept",
+			"src":    ["autogroup:members"],
+			"dst":    ["autogroup:members:*"]
+		},
+		{
+			"action": "accept",
+   "src": ["autogroup:members"],
+   "dst": ["autogroup:internet:*"]
+  }
+	]
+}
 ```

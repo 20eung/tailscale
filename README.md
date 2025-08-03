@@ -152,17 +152,17 @@ cat ~ubuntu/.ssh/id_rsa.pub >> ~ubuntu/.ssh/authorized_keys
 
 ```json
 {
-	"acls": [
-		{
-			"action": "accept",
-			"src":    ["autogroup:members"],
-			"dst":    ["autogroup:members:*"]
-		},
-		{
-			"action": "accept",
+ "acls": [
+  {
+   "action": "accept",
+   "src":    ["autogroup:members"],
+   "dst":    ["autogroup:members:*"]
+  },
+  {
+   "action": "accept",
    "src": ["autogroup:members"],
    "dst": ["autogroup:internet:*"]
   }
-	]
+ ]
 }
 ```
